@@ -8,6 +8,12 @@
     follow proper UI standards - when designing your own, follow existing GoC UI standards for you view layouts and form controls.
 *@
 
+<style>
+    div.modal-footer {
+        display: none
+    }
+</style>
+
 
 <partial name="_Header" />
 
@@ -47,28 +53,30 @@
         <h2 class="modal-title">Print employee details</h2>
     </header>
     <div class="modal-body">
-        <dl class="dl-horizontal">
-            <dt class="small"><label asp-for="FirstName"></label></dt>
-            <dd>@Model.FirstName</dd>
+        <div id="print-contents">
+            <dl class="dl-horizontal">
+                <dt class="small"><label asp-for="FirstName"></label></dt>
+                <dd>@Model.FirstName</dd>
 
-            <dt class="small"><label asp-for="LastName"></label></dt>
-            <dd>@Model.LastName</dd>
+                <dt class="small"><label asp-for="LastName"></label></dt>
+                <dd>@Model.LastName</dd>
 
-            <dt class="small"><label asp-for="StartDate"></label></dt>
-            <dd>@Model.StartDate.ToString("yyyy-MM-dd")</dd>
+                <dt class="small"><label asp-for="StartDate"></label></dt>
+                <dd>@Model.StartDate.ToString("yyyy-MM-dd")</dd>
 
-            <dt class="small"><label asp-for="ProvinceId"></label></dt>
-            <dd>@CodelookupHelper.GetLookupValue(Model.Provinces, Model.ProvinceId)</dd>
+                <dt class="small"><label asp-for="ProvinceId"></label></dt>
+                <dd>@CodelookupHelper.GetLookupValue(Model.Provinces, Model.ProvinceId)</dd>
 
-            <dt class="small"><label asp-for="TermTypeId"></label></dt>
-            <dd>@CodelookupHelper.GetLookupValue(Model.TermTypes, Model.TermTypeId)</dd>
+                <dt class="small"><label asp-for="TermTypeId"></label></dt>
+                <dd>@CodelookupHelper.GetLookupValue(Model.TermTypes, Model.TermTypeId)</dd>
 
-            <dt class="small"><label asp-for="JobDescription"></label></dt>
-            <dd>@Model.JobDescription</dd>
-        </dl>
+                <dt class="small"><label asp-for="JobDescription"></label></dt>
+                <dd>@Model.JobDescription</dd>
+            </dl>
+        </div>
         <div class="mrgn-tp-lg mrgn-lft-lg mrgn-bttm-lg mrgn-rght-lg">
             <p class="text-center">
-                <button class="btn btn-success popup-modal-dismiss" role="button" onclick="printDetail();">@Localization.Print</button>
+                <button class="btn btn-success popup-modal-dismiss" role="button" onclick="PRINT.PrintDetail();">@Localization.Print</button>
                 <button class="btn btn-danger popup-modal-dismiss" role="button" onclick="$('#print-employee').addClass('mfp-hide');">@Localization.Cancel</button>
             </p>
         </div>

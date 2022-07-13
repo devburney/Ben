@@ -1,0 +1,54 @@
+﻿@using TBS.PrintTest.Web.Models
+
+@model EmployeeViewModel
+@*
+    Note: Use proper HTML to meet WET and WCAG standards.  In newer versions of the templates, views will be updated to
+    follow proper UI standards - when designing your own, follow existing GoC UI standards for you view layouts and form controls.
+
+    This form uses Framework.Core extensiosn for all form controls.  The extensions provide a lot of functionality
+    that you would normally have to code.  For example, it will add the * and the (Required) text in red in the label.
+    If the text has a max length, it will add the max length text to the label as well and show a counter of characters
+    used as you type (below the text box).  Note, for this counter to work, you need to include the Foundation.Core.js
+    script which is configured in the BaseActionFilter class.
+*@
+
+<input asp-for="@Model.Id" type="hidden" />
+
+<p>
+    <i><b>Note:</b> To generate a server-side business rule error, enter a first name that starts with the letter "B".</i>
+</p>
+
+<br />
+
+<div class="row">
+    <div class="col-md-6">
+        <weteditor asp-for="@Model.FirstName" />
+    </div>
+    <div class="col-md-6">
+        <weteditor asp-for="@Model.LastName" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <weteditor asp-for="StartDate" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <wetdropdownlist asp-for="ProvinceId" items="@Model.Provinces" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <wetradiobuttonlist asp-for="TermTypeId" items="@Model.TermTypes" />
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <weteditor asp-for="JobDescription" rows="3" />
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿/* Evaluation - General Information - Programs */
+#organization-programs > fieldset > .max-height-scroll {
+    border-radius: 3px;
+    max-height: 20em;
+    overflow-y: scroll;
+    padding: 0 .5em;
+    width: 100%;
+}
+
+/* Search */
+.btn-search { margin-top: 28px; }
+#results-table { border-top: 1px solid #111; }
+#results-table > tbody > tr:first-of-type > td { border-top: 0; }
+
+/* Submit an Evaluation - Tabs */
+.tab-checkmark { position: absolute; margin-top: -8px; right: 10px; top: 50% !important; }
+
+/* Miscellaneous */
+th.required strong.required {
+    color: #d3080c;
+    font-weight: 700;
+}

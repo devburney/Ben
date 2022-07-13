@@ -1,0 +1,61 @@
+﻿@using TBS.PrintTest.Web.Models
+@using TBS.PrintTest.Web.Infrastructure.Helpers
+@using TBS.PrintTest.Web.Resources;
+
+@model EmployeeViewModel
+@*
+    Note: Use proper HTML to meet WET and WCAG standards.  In newer versions of the templates, views will be updated to
+    follow proper UI standards - when designing your own, follow existing GoC UI standards for you view layouts and form controls.
+*@
+
+
+<partial name="_Header" />
+
+<br />
+
+<dl class="dl-horizontal">
+    <dt class="small"><label asp-for="FirstName"></label></dt>
+    <dd>@Model.FirstName</dd>
+
+    <dt class="small"><label asp-for="LastName"></label></dt>
+    <dd>@Model.LastName</dd>
+
+    <dt class="small"><label asp-for="StartDate"></label></dt>
+    <dd>@Model.StartDate.ToString("yyyy-MM-dd")</dd>
+
+    <dt class="small"><label asp-for="ProvinceId"></label></dt>
+    <dd>@CodelookupHelper.GetLookupValue(Model.Provinces, Model.ProvinceId)</dd>
+
+    <dt class="small"><label asp-for="TermTypeId"></label></dt>
+    <dd>@CodelookupHelper.GetLookupValue(Model.TermTypes, Model.TermTypeId)</dd>
+
+    <dt class="small"><label asp-for="JobDescription"></label></dt>
+    <dd>@Model.JobDescription</dd>
+</dl>
+
+<br />
+    @*Using Framework.Core button extensions (not necessary)*@
+    <wetlinkbutton action-name="Index" class="btn btn-default" controller-name="Employee" text="@Localization.ButtonBackToEmployeeList" tooltip="@Localization.ButtonBackToEmployeeListToolTip" button-type="@Foundation.Core.Enums.WetLinkButtonType.LinkButton"></wetlinkbutton>
+    <wetbutton class="btn btn-default" tooltip="@Localization.DisplayPrintView" button-type="@Foundation.Core.Enums.WetButtonType.Button" text="@Localization.DisplayPrintView" id="printDetail"></wetbutton>
+
+
+
+
+
+<section id="print-employee" class="mfp-hide modal-dialog modal-content overlay-def wb-popup-full">
+    <header class="modal-header">
+        <h2 class="modal-title">Print employee details</h2>
+    </header>
+    <div class="modal-body">
+        <p>Content goes here</p>
+        <div class="mrgn-tp-lg mrgn-lft-lg mrgn-bttm-lg mrgn-rght-lg">
+            <div class="row mrgn-tp-xl text-center">
+                <button class="btn btn-danger overlay-close" type="button">Cancel</button>
+                <button class="btn btn-success foundation-ignore-form-monitor">
+                    Print
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer hidden"><button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay">Close<span class="wb-inv">Close overlay</span></button></div>
+</section>

@@ -1,0 +1,29 @@
+﻿@using TBS.PrintTest.Web.Resources;
+
+@model ErrorViewModel
+
+<partial name="_Header" />
+
+<section tabindex="-1" class="alert alert-danger" id="foundation-validation-errors">
+    <h3>@Localization.GenericUntrappedErrorTitle</h3>
+    <ul>
+        @if (Model.IsCustomError)
+        {
+            <li><span class="prefix"></span>@Model.ErrorMessage</li>
+        }
+        else
+        {
+            <li><span class="prefix"></span>@Localization.GenericUntrappedErrorMessage</li>
+        }
+    </ul>
+</section>
+
+
+@*@if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }*@
+
+

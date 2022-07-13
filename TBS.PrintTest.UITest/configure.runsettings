@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>  
+ <RunSettings>  
+  <!-- Configurations for data collectors -->  
+  <DataCollectionRunSettings>  
+   <DataCollectors>  
+    <DataCollector uri="datacollector://microsoft/VideoRecorder/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TestTools.DataCollection.VideoRecorder.VideoRecorderDataCollector, Microsoft.VisualStudio.TestTools.DataCollection.VideoRecorder, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="Screen and Voice Recorder">  
+     <!--Video data collector was introduced in Visual Studio 2017 version 15.5 -->  
+     <Configuration>  
+      <!-- Set "sendRecordedMediaForPassedTestCase" to "false" to add video attachments to failed tests only -->  
+      <MediaRecorder sendRecordedMediaForPassedTestCase="false" xmlns="">  
+       <ScreenCaptureVideo bitRate="512" frameRate="2" quality="20" />  
+      </MediaRecorder>  
+     </Configuration>  
+    </DataCollector>  
+   </DataCollectors>  
+  </DataCollectionRunSettings>
+   <TestRunParameters>
+     <Parameter name="LocalHostUrl" value="https://localhost:44387/" />
+     <!--fictional  url, please replace once dev endpoint is created.-->
+     <Parameter name="Url" value="https://dev.tbs-sct.gc.ca/imtdtemplate/" />
+     <!--these are TAP settings-->
+     <Parameter name="MyKeyFileName" value="CICDTestingMyKEYUser1" />
+     <Parameter name="MyKeyTestPRI" value="CICD00001" />
+     <Parameter name="webAppFirstName" value="UserOne" />
+     <Parameter name="webAppLastName" value="CICDMyKey" />
+     <!--These are not specific to TAP settings-->
+     <Parameter name="keyVaultUrl" value="kv-devops-dev01.vault.azure.net" />
+     <Parameter name="webAppUserName" value="automatedQAUser" />
+     <Parameter name="webAppPassword" value="Password1" />
+     <Parameter name="webAppFirstName" value="DB" />
+     <Parameter name="webAppLastName" value="Cooper" />
+   </TestRunParameters>
+ </RunSettings>

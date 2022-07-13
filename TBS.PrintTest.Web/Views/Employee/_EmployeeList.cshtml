@@ -1,0 +1,50 @@
+﻿@using TBS.PrintTest.Web.Models
+@using TBS.PrintTest.Web.Resources;
+
+@model EmployeesViewModel
+@*
+    Note: Use proper HTML to meet WET and WCAG standards.  In newer versions of the templates, views will be updated to
+    follow proper UI standards - when designing your own, follow existing GoC UI standards for you view layouts and form controls.
+*@
+
+@{
+    // In this example, we're using Framework.Core to display WET Modal confirmation box on delete.
+    // Initiate and configure the WET Model extension object. (refer to this object in the wetmodal tag helper below - last line on this view)
+    var DeleteModal = new Foundation.Core.Models.WetModal("Employee_Index_DeleteModal", "Delete confirmation", "Are you sure you want to delete selected employee?", Foundation.Core.Enums.WetModalType.Confirmation);
+
+}
+
+<table id="employees" class="wb-tables table table-striped table-hover" data-wb-tables='{ "ordering" : false, "paging": false, "searching": false, "info": false }'>
+    <thead>
+        <tr>
+            <th class="hide">Id</th>
+            <th>@Localization.EmployeeFirstName</th>
+            <th>@Localization.EmployeeLastName</th>
+            <th>@Localization.EmployeeJobDescription</th>
+            <th style="width: 240px">@Localization.EmployeeListActions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model.Employees)
+        {
+            <tr>
+                <td class="hide">@employee.Id</td>
+                <td>@employee.FirstName</td>
+                <td>@employee.LastName</td>
+                <td>@employee.JobDescription</td>
+                <td>
+                    @*For these buttons, Framework.Core extensions are used.*@
+                    <wetlinkbutton action-name="Details" class="btn btn-sm btn-default" controller-name="Employee" route-values="new { id = employee.Id }" text="@Localization.ButtonView" tooltip="@Localization.ButtonViewEmployeeToolTip" button-type="@Foundation.Core.Enums.WetLinkButtonType.View"></wetlinkbutton>
+                    <wetlinkbutton action-name = "Edit" class="btn btn-sm btn-default" route-values="new { id = employee.Id }" text="@Localization.ButtonEdit" tooltip="@Localization.ButtonEditEmployeeToolTip" button-type="@Foundation.Core.Enums.WetLinkButtonType.Edit"></wetlinkbutton>
+                    @*The delete button "wetbuttonasync" extension will do a partial page refresh using Ajax. This is done by referencing the table id "employees" for the target attribute.*@
+                    <wetbuttonasync action-name="Delete" class="btn btn-sm btn-warning" modal="DeleteModal" route-values="new { id = employee.Id }" text="@Localization.ButtonDelete" target="#employees" tooltip="@Localization.ButtonDeleteEmployeeToolTip" button-type="@Foundation.Core.Enums.WetButtonType.Delete"></wetbuttonasync>
+
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+
+
+@*Using Framework.Core Wet Modal extension*@
+<wetmodal modal="DeleteModal"></wetmodal>

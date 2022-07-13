@@ -1,0 +1,6 @@
+﻿<h1 class="display-4">@ViewBag.PageTitle</h1>
+@if (!string.IsNullOrWhiteSpace(ViewBag.PageDescription))
+{<p class="pagetag">@ViewBag.PageDescription</p>}
+<div id="foundation-alert"></div>
+<div id="foundation-loading-spinner" class="foundation-loading" role="alert" aria-hidden="false" aria-busy="true" aria-live="polite">@TBS.PrintTest.Web.Resources.Localization.Loading ...<br /><span class="fa fa-spinner fa-spin fa-3x fa-fw"></span><span class="sr-only">@TBS.PrintTest.Web.Resources.Localization.Loading ...</span></div>
+<div id="foundation-loading-overlay" class="foundation-loading"></div>

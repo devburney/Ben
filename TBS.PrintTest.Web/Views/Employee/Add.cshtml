@@ -1,0 +1,23 @@
+﻿@using TBS.PrintTest.Web.Models
+@using TBS.PrintTest.Web.Resources;
+
+@model EmployeeViewModel
+
+@*
+    Note: Use proper HTML to meet WET and WCAG standards.  In newer versions of the templates, views will be updated to
+    follow proper UI standards - when designing your own, follow existing GoC UI standards for you view layouts and form controls.
+*@
+
+<div class="wb-frmvld">
+    <form method="post">
+
+        <partial name="_Header" />
+        <partial name="_ValidationSummary" model="Model" />
+
+        <partial name="_Employee" model="Model" />
+
+        <button id="save" asp-controller="Employee" asp-action="Add" class="btn btn-primary foundation-ignore-form-monitor">Save</button>
+        @*Using Framework.Core button extensions (not necessary)*@
+        <wetlinkbutton action-name="Index" class="btn btn-default" controller-name="Employee" text="@Localization.ButtonBackToEmployeeList" tooltip="@Localization.ButtonBackToEmployeeListToolTip" button-type="@Foundation.Core.Enums.WetLinkButtonType.LinkButton"></wetlinkbutton>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+Name;Element Type;Selenium Selector Type;Selector String;Element Attributes;Displayed On Page Load;Clickable On Page Load
+Top banner - GCintranet;Link;CssSelector;div.app-name > a;;TRUE;TRUE
+Top banner - Gcconnex - Link;Link;CssSelector;#wb-gctools > div:nth-child(1) > a;href='https://gcconnex.gc.ca/splash/' text='';TRUE;TRUE
+Top banner - Gcconnex - GC text;Text;CssSelector;#wb-gctools > div:nth-child(1) > a > span.bold-gc;text='GC';TRUE;FALSE
+Top banner - Gcconnex - connex text;Text;CssSelector;#wb-gctools > div:nth-child(1) > a;text='connex';TRUE;FALSE
+Top banner - GCintranet;Link;CssSelector;#wb-gctools > div:nth-child(2) > a;href='http://www.gcpedia.gc.ca/wiki/?setlang=en';TRUE;TRUE
+Top banner - GCintranet;Text;CssSelector;#wb-gctools > div:nth-child(2) > a > span.bold-gc;text='GC';TRUE;FALSE
+Top banner - GCintranet;Text;CssSelector;#wb-gctools > div:nth-child(2) > a;text='pedia';TRUE;FALSE
+Top banner - GCintranet;Link;CssSelector;#wb-gctools > div:nth-child(3) > a;href='http://gcdirectory-gcannuaire.gc.ca/en/GCD/?pgid=002';TRUE;TRUE
+Top banner - GCintranet;Text;CssSelector;#wb-gctools > div:nth-child(3) > a > span.bold-gc;text='GC';TRUE;FALSE
+Top banner - GCintranet;Text;CssSelector;#wb-gctools > div:nth-child(3) > a;text='directory';TRUE;FALSE
+Top banner - GCintranet;Link;CssSelector;#wb-gctools > div:nth-child(4) > a;href='https://gccollab.ca/splash/';TRUE;TRUE
+Top banner - GCintranet;Text;CssSelector;#wb-gctools > div:nth-child(4) > a > span.bold-gc;text='GC';TRUE;FALSE
+Top banner - GCintranet;Text;CssSelector;#wb-gctools > div:nth-child(4) > a;text='collab';TRUE;FALSE
+Top banner - Language;Text;CssSelector;#wb-lng > h2.wb-inv;text='Language selection';FALSE;FALSE
+Top banner - Language;Link;CssSelector;#wb-lng > div.row > div.col-md-12 > ul.gcbarlng > li > a;lang='fr' href='/RoleManager/fr' text='Français';TRUE;TRUE
+Naviguation - Home - WCAG;Text;CssSelector;#wb-bc > h2.wb-inv; text='You are here:';FALSE;FALSE
+Naviguation - Home;Link;CssSelector;#wb-bc > div.container > div.row > ol.breadcrumb > li > a; href=""/"" text='Home';TRUE;TRUE
+Footer - Version;Text;CssSelector;#wb-dtmd > dt;text='Version:';TRUE;FALSE
+Footer - About Government;Text;CssSelector;#wb-info > nav > h2.wb-inv; text='About government';FALSE;FALSE
+Footer - Contact us;Link;CssSelector;#wb-info > nav > ul > li:nth-child(1) > a; href='https://intranet.canada.ca/contact/contactgc-eng.aspx' text='Contact us';TRUE;TRUE
+Footer - About GCTools;Link;CssSelector;#wb-info > nav > ul > li:nth-child(2) > a; href='https://intranet.canada.ca/contact/contactgc-eng.aspx' text='About GCTools';TRUE;TRUE
+Footer - About GCTools;Link;CssSelector;#wb-info > nav > ul > li:nth-child(3) > a; href='https://www.canada.ca/en.html' text='Canada.ca';TRUE;TRUE
+Footer - About GCTools;Link;CssSelector;#wb-info > nav > ul > li:nth-child(4) > a; href='https://intranet.canada.ca/terms-avis-eng.asp' text='Terms and conditions';TRUE;TRUE
+Footer - GoC Image - Link;Link;CssSelector; div.brand > div.container > div.row > div:nth-child(1) > a; href='https://www.canada.ca/en.html';TRUE;TRUE
+Footer - GoC Image - WCAG Text;Text;CssSelector; div.brand > div.container > div.row > div:nth-child(1) > a > span.wb-inv; text='Government of Canada';FALSE;FALSE
+Footer - GoC Image;Image;CssSelector; div.brand > div.container > div.row > div:nth-child(1) > a > object; type='image/svg+xml' data='https://ssl-templates.services.gc.ca/app/cls/WET/gcintranet/v4_0_27/assets/sig-blk-en.svg';TRUE;FALSE
+Footer - GoC Image;Image;CssSelector; div.brand > div.container > div.row > div:nth-child(2) > a;href='#wb-cont' text='Top of Page';TRUE;FALSE
+Footer - GoC Image;Image;CssSelector; div.brand > div.container > div.row > div:nth-child(3) > object; type='image/svg+xml' role='img' data='https://ssl-templates.services.gc.ca/app/cls/WET/gcintranet/v4_0_27/assets/wmms-blk.svg' aria-label='Symbol of the Government of Canada';TRUE;FALSE

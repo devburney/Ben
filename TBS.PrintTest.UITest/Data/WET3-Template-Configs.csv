@@ -1,0 +1,20 @@
+Name;Element Type;Selenium Selector Type;Selector String;Element Attributes;Displayed On Page Load;Clickable On Page Load
+Top banner - GoC;Image;Id;gcwu-sig-in;;TRUE;FALSE
+Top banner - Canada.ca;Link;CssSelector;#gcwu-gcnb1 > a;text='Canada.ca' href='http://canada.ca/en/';TRUE;TRUE
+Top banner - Services;Link;CssSelector;#gcwu-gcnb2 > a;text='Services';TRUE;TRUE
+Top banner - Departments;Link;CssSelector;#gcwu-gcnb3 > a;text='Departments';TRUE;TRUE
+Top banner - Français;Link;CssSelector;#gcwu-gcnb-lang > a;text='Français';TRUE;TRUE
+Page header;Header;Id;wb-cont;;TRUE;FALSE
+Canada;Image;CssSelector;#gcwu-wmms-in > object:nth-child(1);alt='Symbol of the Government of Canada';TRUE;FALSE
+Terms and conditions;Link;CssSelector;#gcwu-tctr > ul > li.gcwu-tc > a;text='Terms and conditions' href='http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-eng.asp';TRUE;TRUE
+Transparency;Link;CssSelector;#gcwu-tctr > ul > li.gcwu-tr > a;text='Transparency' href'http://www.tbs-sct.gc.ca/pd-dp/index-eng.asp';TRUE;TRUE
+About us;Link;CssSelector;#gcwu-sft-in > section:nth-child(4) > div > h4 > a;href='http://www.tbs-sct.gc.ca/tbs-sct/abu-ans/tbs-sct/abu-ans-eng.asp' text='About us';TRUE;TRUE
+Contact us;Link;CssSelector;#gcwu-sft-in > section:nth-child(3) > div > h4 > a;href='http://www.tbs-sct.gc.ca/contact/contact-eng.aspx#Form1' text='Contact us';TRUE;TRUE
+News;Link;CssSelector;#gcwu-sft-in > section:nth-child(5) > div > h4 > a;href='http://www.tbs-sct.gc.ca/media/index-eng.asp' text='News';TRUE;TRUE
+Stay connected;Link;CssSelector;#gcwu-sft-in > section:nth-child(6) > div > h4 > a;href='http://www.tbs-sct.gc.ca/tbs-sct/cmn/sc-rc-eng.asp' text='Stay connected';TRUE;TRUE
+Bottom banner - HEALTH;Link;CssSelector;#gcwu-gcft-fip > ul > li:nth-child(1) > a;href='http://healthycanadians.gc.ca/index-eng.php' text='Health';TRUE;TRUE
+Bottom banner - TRAVEL;Link;CssSelector;#gcwu-gcft-fip > ul > li:nth-child(2) > a:nth-child(2);href='http://www.travel.gc.ca/index-eng.asp' text='Travel';TRUE;TRUE
+Bottom banner - SERVICE CANADA;Link;CssSelector;#gcwu-gcft-fip > ul > li:nth-child(4) > a;href='http://www.servicecanada.gc.ca/eng/home.shtml' text='Service Canada';TRUE;TRUE
+Bottom banner - JOBS;Link;CssSelector;#gcwu-gcft-fip > ul > li:nth-child(5) > a;href='http://www.jobbank.gc.ca/intro-eng.aspx' text='Jobs';TRUE;TRUE
+Bottom banner - ECONOMY;Link;CssSelector;#gcwu-gcft-fip > ul > li:nth-child(6) > a;href='http://actionplan.gc.ca/eng/index.asp' text='Economy';TRUE;TRUE
+Bottom banner - Canada.ca;Link;CssSelector;#gcwu-gcft-ca > div > a;href='http://canada.ca/en/' text='Canada.ca';TRUE;TRUE

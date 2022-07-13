@@ -1,0 +1,27 @@
+﻿@using TBS.PrintTest.Web.Resources;
+
+@*
+    Note: Use proper HTML to meet WET and WCAG standards.  In newer versions of the templates, views will be updated to
+    follow proper UI standards - when designing your own, follow existing GoC UI standards for you view layouts and form controls.
+*@
+
+<partial name="_Header" />
+
+<h2>@Localization.Contacts_SubTitle</h2>
+
+<p>@Localization.Contacts_Para1</p>
+
+@*NOTE: This is just an example but of course, all text should be provided by resource files.  Resource files
+    not used in html below.*@
+<div>
+    <label for="email">Email:</label>
+    <a name="email" href="mailto:someone@tbs-sct.gc.ca">someone@tbs-sct.gc.ca</a>
+</div>
+<div>
+    <label for="tollfree">Toll free:</label>
+    <a name="tollfree">1-877-555-5556</a>
+</div>
+<div>
+    <label for="teletypewriter">Teletypewriter (TTY):</label>
+    <a name="teletypewriter">613-555-5555</a>
+</div>

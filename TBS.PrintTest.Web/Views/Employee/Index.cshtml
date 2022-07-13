@@ -1,0 +1,18 @@
+﻿@using TBS.PrintTest.Web.Models
+@using TBS.PrintTest.Web.Resources;
+
+@model EmployeesViewModel
+@*
+    Note: Use proper HTML to meet WET and WCAG standards.  In newer versions of the templates, views will be updated to
+    follow proper UI standards - when designing your own, follow existing GoC UI standards for you view layouts and form controls.
+*@
+
+<partial name="_Header" />
+
+<br />
+
+<p class="pull-right">
+    <a asp-controller="Employee" asp-action="Add" class="btn btn-primary">@Localization.ButtonAddEmployee</a>
+</p>
+
+<partial name="_EmployeeList" model="Model" />

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This is where is where you configure your menu options.  The root node should be your home page.  Every child of home will be displayed
+as menu links to the right of the Home menu link.  Every subsequent child node will determine how the breadcrumbs are displayed.
+For example, in this case we have Home Employees Contacts Google as top level menu links.  The google menu link is just an example of how
+to create a link that will open in a new page.  Only the Employees node has child nodes.  By adding the nodes for View, Add and Edit, the
+bread crumbs will automatically be handled.  For example, when navigating to the Edit Employee view, breadcumbs will be
+Home > Employees > Edit Employee
+
+NOTE: key = whatever unique identifier you want, in this case, used the resource key value for the link text
+      controller = controller name for action (must be small caps)
+      action = name of action method (must be small caps)
+      text = this is the resource key name for the item text.  the menu has it's own resource file in the resources folder called MenuResources.resx
+      preservedRouteParameters = always set this to "culture" so the routes preserve culture parameters.
+      
+NOTE 2: Site map should be defined for every view (controller/action) in order for the language toggle and breadcrumbs to work properly.
+        If you don't want to show the node in the menu, add the attribute componentVisibility="none" to the node.
+
+NOTE 3: If you want your second level children to be added as submenu items, include componentVisibility="addChildrenToSubmenu". Do not do this for the
+        root Home_Index node.  For example if you add this attribute to the Employee_Index node, Employee_View, Employee_Add, Employee_Edit nodes
+        would appear as submenu items under Employee menu link.  Then Employee would not be a clickable menu link.  Wouldn't make sense to
+        add these as children in this example.
+        
+NOTE 4: If you want to add a paramter to your controller action call, use the page add attribute.  Example page="23" will form your urk as en/controller/action/23
+
+-->
+
+<NavNode key="Home_Index" controller="home" action="index" text="Home_Index" preservedRouteParameters="culture">
+  <Children>
+    <NavNode key="Employee_Index" controller="employee" action="index" text="Employee_Index"  preservedRouteParameters="culture">
+      <Children>
+        <NavNode key="Employee_View" controller="employee" action="details" text="Employee_View" preservedRouteParameters="culture" />
+        <NavNode key="Employee_Add" controller="employee" action="add" text="Employee_Add" preservedRouteParameters="culture" />
+        <NavNode key="Employee_Edit" controller="employee" action="edit" text="Employee_Edit" preservedRouteParameters="culture" />
+      </Children>
+    </NavNode>
+    <NavNode key="Contacts_Index" controller="contacts" action="index" text="Contacts_Index" preservedRouteParameters="culture" />
+    <NavNode key="CustomUrl_Index" url="https://www.google.ca" target="_blank" text="Google" />
+  </Children>
+</NavNode>

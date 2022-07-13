@@ -1,0 +1,114 @@
+﻿@model TBS.PrintTest.Web.Models.BaseViewModel
+
+@using Foundation.Core.Enums
+@*Resource values in this view should be pulled from Foundation.Core.  Once they are availble, read them from there rather than the app resources.*@
+@using FoundationCoreResources = Foundation.Core.Resources
+@using WebAppResource = TBS.PrintTest.Web.Resources
+
+
+<div class="foundation-validation-summary">
+    @if (Model.Success != null && (Model.Errors == null || Model.Errors.Count == 0))
+    {
+        <section tabindex="-1" class="alert alert-success" id="foundation-validation-success">
+            <h3><button title="@FoundationCoreResources.Localization.Extensions_WetAlert_Dismiss" class="foundation-alert-dismiss close" type="button">&times;<span class="wb-inv"> @FoundationCoreResources.Localization.Extensions_WetAlert_Dismiss</span></button>@WebAppResource.Localization.ValidationSummary_Success</h3>
+            <p>@Html.Raw(Model.Success.Text)</p>
+        </section>
+    }
+    @if (Model.Errors != null && Model.Errors.Count > 0)
+    {
+        var count = 1;
+        var total = Model.Errors.Count;
+        var found = string.Format(total == 1 ? WebAppResource.Localization.ValidationSummary_ErrorsFound_One : WebAppResource.Localization.ValidationSummary_ErrorsFound, total);
+        string header = $"{WebAppResource.Localization.ValidationSummary_Errors_Submit} {found}";
+        if (Model.OperationType.HasValue)
+        {
+            switch (Model.OperationType.Value)
+            {
+                case OperationType.List:
+                    header = $"{WebAppResource.Localization.ValidationSummary_Errors_List} {found}";
+                    break;
+                case OperationType.Get:
+                    header = $"{WebAppResource.Localization.ValidationSummary_Errors_Load} {found}";
+                    break;
+                case OperationType.Save:
+                    header = $"{WebAppResource.Localization.ValidationSummary_Errors_Save} {found}";
+                    break;
+                case OperationType.Submit:
+                    header = $"{WebAppResource.Localization.ValidationSummary_Errors_Submit} {found}";
+                    break;
+                case OperationType.Delete:
+                    header = $"{WebAppResource.Localization.ValidationSummary_Errors_Delete} {found}";
+                    break;
+            }
+        }
+        <section tabindex="-1" class="alert alert-danger" id="foundation-validation-errors">
+            <h3><button title="@FoundationCoreResources.Localization.Extensions_WetAlert_Dismiss" class="foundation-alert-dismiss close" type="button">&times;<span class="wb-inv"> @FoundationCoreResources.Localization.Extensions_WetAlert_Dismiss</span></button>@header</h3>
+            <ul>
+                @foreach (var message in Model.Errors)
+                {
+                    if (string.IsNullOrEmpty(message.Id))
+                    {
+                        <li><span class="prefix">@WebAppResource.Localization.ValidationSummary_Errors_Header&nbsp;@count.ToString(): </span>@Html.Raw(message.Text)</li>
+                    }
+                    else
+                    {
+                        <li><a href="#@message.Id"><span class="prefix">@WebAppResource.Localization.ValidationSummary_Errors_Header&nbsp;@count.ToString(): </span>@Html.Raw(message.Text)</a></li>
+                    }
+                    count++;
+                }
+            </ul>
+        </section>
+    }
+
+    @if (Model.Warnings != null && Model.Warnings.Count > 0)
+    {
+        var count = 1;
+        var total = Model.Warnings.Count;
+        var found = string.Format(total == 1 ? WebAppResource.Localization.ValidationSummary_WarningsFound_One : WebAppResource.Localization.ValidationSummary_WarningsFound, total);
+        <section tabindex="-1" class="alert alert-warning" id="foundation-validation-warnings">
+            <h3><button title="@FoundationCoreResources.Localization.Extensions_WetAlert_Dismiss" class="foundation-alert-dismiss close" type="button">&times;<span class="wb-inv"> @FoundationCoreResources.Localization.Extensions_WetAlert_Dismiss</span></button>@found</h3>
+            <ul>
+                @foreach (var message in Model.Warnings)
+                {
+                    if (string.IsNullOrEmpty(message.Id))
+                    {
+                        <li><span class="prefix">@WebAppResource.Localization.ValidationSummary_Warnings_Header&nbsp;@count.ToString(): </span>@Html.Raw(message.Text)</li>
+                    }
+                    else
+                    {
+                        <li><a href="#@message.Id"><span class="prefix">@WebAppResource.Localization.ValidationSummary_Warnings_Header&nbsp;@count.ToString(): </span>@Html.Raw(message.Text)</a></li>
+                    }
+                    count++;
+                }
+            </ul>
+        </section>
+    }
+
+    @if (Model.Infos != null && Model.Infos.Count > 0)
+    {
+        var count = 1;
+        var total = Model.Warnings.Count;
+        var found = string.Format(total == 1 ? WebAppResource.Localization.ValidationSummary_InfosFound_One : WebAppResource.Localization.ValidationSummary_InfosFound_One, total);
+        <section tabindex="-1" class="alert alert-info" id="foundation-validation-infos">
+            <h3><button title="@FoundationCoreResources.Localization.Extensions_WetAlert_Dismiss" class="foundation-alert-dismiss close" type="button">&times;<span class="wb-inv"> @FoundationCoreResources.Localization.Extensions_WetAlert_Dismiss</span></button>@found</h3>
+            <ul>
+                @foreach (var message in Model.Infos)
+                {
+
+                    if (string.IsNullOrEmpty(message.Id))
+                    {
+                        <li><span class="prefix">@WebAppResource.Localization.ValidationSummary_Infos_Header&nbsp;@count.ToString(): </span>@Html.Raw(message.Text)</li>
+                    }
+                    else
+                    {
+                        <li><a href="#@message.Id"><span class="prefix">@WebAppResource.Localization.ValidationSummary_Infos_Header&nbsp;@count.ToString(): </span>@Html.Raw(message.Text)</a></li>
+                    }
+                    count++;
+                }
+            </ul>
+        </section>
+    }
+</div>
+
+@* Clear all messages from the model *@
+@{ Model.ClearMessages(); }

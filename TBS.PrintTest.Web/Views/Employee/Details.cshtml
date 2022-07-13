@@ -47,15 +47,30 @@
         <h2 class="modal-title">Print employee details</h2>
     </header>
     <div class="modal-body">
-        <p>Content goes here</p>
+        <dl class="dl-horizontal">
+            <dt class="small"><label asp-for="FirstName"></label></dt>
+            <dd>@Model.FirstName</dd>
+
+            <dt class="small"><label asp-for="LastName"></label></dt>
+            <dd>@Model.LastName</dd>
+
+            <dt class="small"><label asp-for="StartDate"></label></dt>
+            <dd>@Model.StartDate.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="small"><label asp-for="ProvinceId"></label></dt>
+            <dd>@CodelookupHelper.GetLookupValue(Model.Provinces, Model.ProvinceId)</dd>
+
+            <dt class="small"><label asp-for="TermTypeId"></label></dt>
+            <dd>@CodelookupHelper.GetLookupValue(Model.TermTypes, Model.TermTypeId)</dd>
+
+            <dt class="small"><label asp-for="JobDescription"></label></dt>
+            <dd>@Model.JobDescription</dd>
+        </dl>
         <div class="mrgn-tp-lg mrgn-lft-lg mrgn-bttm-lg mrgn-rght-lg">
-            <div class="row mrgn-tp-xl text-center">
-                <button class="btn btn-danger overlay-close" type="button">Cancel</button>
-                <button class="btn btn-success foundation-ignore-form-monitor">
-                    Print
-                </button>
-            </div>
+            <p class="text-center">
+                <button class="btn btn-success popup-modal-dismiss" role="button" onclick="printDetail();">@Localization.Print</button>
+                <button class="btn btn-danger popup-modal-dismiss" role="button" onclick="$('#print-employee').addClass('mfp-hide');">@Localization.Cancel</button>
+            </p>
         </div>
     </div>
-    <div class="modal-footer hidden"><button type="button" class="btn btn-sm btn-primary pull-left popup-modal-dismiss" title="Close overlay">Close<span class="wb-inv">Close overlay</span></button></div>
 </section>

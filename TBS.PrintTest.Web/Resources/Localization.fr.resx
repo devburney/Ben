@@ -150,6 +150,9 @@
   <data name="ButtonViewEmployeeToolTip" xml:space="preserve">
     <value>fr - View employee</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>FR-Cancel</value>
+  </data>
   <data name="Codelookup_SelectProvince" xml:space="preserve">
     <value>fr - Select a province...</value>
   </data>
@@ -243,6 +246,9 @@
   <data name="Loading" xml:space="preserve">
     <value>Chargement</value>
     <comment>This is required for the loading spinner</comment>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>FR-Print</value>
   </data>
   <data name="ValidationSummary_ErrorsFound" xml:space="preserve">
     <value>parce que {0} erreurs ont été relevées.</value>
